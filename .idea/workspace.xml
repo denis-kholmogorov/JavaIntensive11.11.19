@@ -30,10 +30,16 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -75,6 +81,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="159" y="120" width="697" height="800" key="CommitChangelistDialog2" timestamp="1573635533969">
+      <screen x="0" y="0" width="1680" height="1021" />
+    </state>
+    <state x="159" y="120" width="697" height="800" key="CommitChangelistDialog2/0.0.1680.1021@0.0.1680.1021" timestamp="1573635533969" />
     <state x="623" y="269" width="426" height="479" key="FileChooserDialogImpl" timestamp="1573561472211">
       <screen x="0" y="0" width="1680" height="1021" />
     </state>
