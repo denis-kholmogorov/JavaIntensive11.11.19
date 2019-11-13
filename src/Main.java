@@ -1,25 +1,35 @@
+import com.dropbox.core.DbxException;
+import com.dropbox.core.DbxRequestConfig;
+import com.dropbox.core.v2.DbxClientV2;
+import com.dropbox.core.v2.files.FileMetadata;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
 
 public class Main
 {
-    public static void main(String[] args) throws AWTException, IOException, InterruptedException {
+    public static void main(String[] args) throws AWTException, IOException, InterruptedException, DbxException {
 
-        String keyToken = "-SAvcNIHbxAAAAAAAAAAOVuLT1Rrfq45nrgi_3XeFUf1c8yLZ5dTWfMOW9ncZjto";
+        String ACCESS_TOKEN = "-SAvcNIHbxAAAAAAAAAAOVuLT1Rrfq45nrgi_3XeFUf1c8yLZ5dTWfMOW9ncZjto";
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
-        Date now = new Date();
-        System.out.println("Сегодняшняя дата " + dateFormat.format(now));
+        DbxRequestConfig config = DbxRequestConfig.newBuilder("dropbox/java-tutorial").build();
+        DbxClientV2 client = new DbxClientV2(config, ACCESS_TOKEN);
 
-        BufferedImage image = new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
-        System.out.println("Сделан скриншот размером (" + image.getWidth() + " х " + image.getHeight() + ")");
-        ImageIO.write(image, "png", new File("/home/denis/" + dateFormat.format(now) + ".png"));
+        MyThread thread = new MyThread();
+        thread.run(client);
+
+
+
+
+
+
+        //System.out.println("Сделан скриншот размером (" + image.getWidth() + " х " + image.getHeight() + ")");
+
     }
 }
 
