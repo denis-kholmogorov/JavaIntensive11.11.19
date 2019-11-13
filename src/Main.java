@@ -11,25 +11,7 @@ public class Main
 {
     public static void main(String[] args) throws AWTException, IOException, InterruptedException {
 
-        System.out.println("Кофе-машина");
-        System.out.print("Введите сумму - ");
-        Scanner scanner = new Scanner(System.in);
-        int moneyAmount = scanner.nextInt();
-
-        int[] drinkPrices = {150, 80, 20};
-        String[] drinkNames = {"капучино", "эспрессо", "воду"};
-
-        boolean  canBuyAnything = false;
-        for(int i = 0; i < 3; i = i + 1)
-        {
-            if(moneyAmount >= drinkPrices[i]) {
-                System.out.println("Вы можете купить " + drinkNames[i]);
-                canBuyAnything = true;
-            }
-        }
-        if(!canBuyAnything) {
-            System.out.println("Недостаточно средств :( Учите Java и зарабатывайте много :)");
-        }
+        String keyToken = "-SAvcNIHbxAAAAAAAAAAOVuLT1Rrfq45nrgi_3XeFUf1c8yLZ5dTWfMOW9ncZjto";
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
         Date now = new Date();
