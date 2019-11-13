@@ -11,7 +11,15 @@ import java.util.Date;
 
 public class MyThread extends Thread {
 
-    public void run(DbxClientV2 client){
+    private DbxClientV2 client;
+    private long before;
+    private long after;
+
+    public MyThread(DbxClientV2 client){
+        this.client = client;
+    }
+
+    public void run(){
         for(;;)
         {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
@@ -22,15 +30,17 @@ public class MyThread extends Thread {
                 ByteArrayOutputStream imageByte = new ByteArrayOutputStream();
                 ImageIO.write(image, "png", imageByte);
                 InputStream in = new ByteArrayInputStream(imageByte.toByteArray());
+                before = System.currentTimeMillis();
                 client.files().uploadBuilder("/" + dateFormat.format(now) + ".png").uploadAndFinish(in);
+                after = System.currentTimeMillis();
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
-
+            System.out.println(after - before);
             try{
-                sleep(5000);
-            }catch (InterruptedException ex){
-                ex.printStackTrace();
+                sleep(3000);
+            }catch (InterruptedException e){
+                e.printStackTrace();
             }
         }
     }
