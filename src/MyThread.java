@@ -1,5 +1,4 @@
 import com.dropbox.core.v2.DbxClientV2;
-
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
