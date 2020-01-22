@@ -38,7 +38,7 @@ public class MyThread extends Thread {
             System.out.println(after - before);
             try{
                 sleep(3000);
-            }catch (InterruptedException e){
+            } catch (InterruptedException e){
                 e.printStackTrace();
             }
         }
